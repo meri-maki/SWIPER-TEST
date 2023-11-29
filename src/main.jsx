@@ -19,17 +19,11 @@ const projectId = "cc52e468243becfa0d98aa9eb74afe63"
 const wagmiConfig = createConfig({
 	autoConnect: false,
 	connectors: [
-		new MetaMaskConnector({ chains }),
-		new CoinbaseWalletConnector({
-			chains,
-			options: {
-				appName: "wagmi",
-			},
-		}),
 		new WalletConnectConnector({
 			chains,
 			options: {
 				projectId,
+				showQrModal: false,
 			},
 		}),
 		new InjectedConnector({
